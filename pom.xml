@@ -17,6 +17,13 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>com.pulumi</groupId>
+			<artifactId>docker</artifactId>
+			<version>4.7.0-alpha.1703655555+6db0abf4</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

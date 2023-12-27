@@ -1,8 +1,5 @@
 package api.gerenciamento_stock.Models.other;
 
-import java.sql.Date;
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,24 +9,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "produto_forcedor")
+@Table(name = "lec")
 @Getter
 @Setter
-public class Produto_fornecedor {
+public class lec {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigoProduto;
-
-    private double quantidade_compra;
-
-    private float valor;
-
-    private Date prazo;
-
-    // @OneToMany
-    // @JoinColumn(name = "codigo_produto", referencedColumnName = "Id_Produto")
-    // private Produto produto;
+    private int codigo;
 
     
 }

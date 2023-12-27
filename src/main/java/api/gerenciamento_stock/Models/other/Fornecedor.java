@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -28,4 +31,12 @@ public  class Fornecedor {
 
     @Email(message = "digite o email")
     private String Email;
+
+    @OneToOne
+    @JoinColumn(name="codigo_fornecedor", referencedColumnName = "codigoProduto")
+    private Produto_fornecedor produtosFornecer;
+
+    @OneToMany
+    @JoinColumn(name = "", referencedColumnName = "")
+    private EnderecoFornecedor enderecoFornecedor;
 }

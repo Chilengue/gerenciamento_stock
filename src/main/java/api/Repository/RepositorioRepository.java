@@ -1,6 +1,6 @@
 package api.Repository;
 
-import java.util.*;
+
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Repository
-public interface RepositorioRepository extends CrudRepository<Produto, Long>{
+public interface RepositorioRepository extends CrudRepository<Produto, Integer>{
     
     List<Produto> findAll();
 

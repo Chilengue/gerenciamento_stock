@@ -1,14 +1,14 @@
 package api.gerenciamento_stock.Repository;
 
-import  java.util.*;
-import org.springframework.data.repository.CrudRepository;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import api.gerenciamento_stock.Models.other.Produto;
 import java.util.List;
 
-
-public interface ProdutoReposotory extends CrudRepository<Produto, Long> {
+@Repository
+public interface ProdutoReposotory extends CrudRepository<Produto, Integer> {
 
     List<Produto> findAll();
 
