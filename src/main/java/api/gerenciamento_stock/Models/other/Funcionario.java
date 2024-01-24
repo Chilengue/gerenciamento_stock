@@ -16,9 +16,7 @@ public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int autor;
-    public void setAutor(int autor) {
-        this.autor = autor;
-    }
+   
     private String Nome, Cargo, Setor, funcao, email;
     private float horas_trabalho, horas_astasViagem, Bi, salario;
 }
