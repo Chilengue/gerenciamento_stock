@@ -29,7 +29,7 @@ public class ProdutoService {
         }else if(obj.getPreco_custoFinal()<1.0){
             mensagem.setMensagem("Digite um valor maior que R$ 0,00!");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-        }else if(obj.getVolumeEmbalagemDoProduto()<0){
+        }else if(obj.getVolumeEmbalagemDoProduto()<=0){
             mensagem.setMensagem("O volume da embalagem precisa ser positivo.");
             return new ResponseEntity<>(mensagem , HttpStatus.UNPROCESSABLE_ENTITY);
         }else{
@@ -37,15 +37,15 @@ public class ProdutoService {
         }
     }
 
-    public ResponseEntity<?> selecionarpeloId (int id_Produto)
+    public ResponseEntity<?> selecionarpeloId (Produto obj)
     {
-        if (accao.countBycodigo(id_Produto)==0) {
+        if (accao.countBycodigo(obj)==0) {
             mensagem.setMensagem("codigo nao foi encontrado");
-            return new ResponseEntity<>(accao.findById_Produto(id_Produto), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(accao.findById_Produto(obj), HttpStatus.BAD_REQUEST);
         }
         else
         {
-            return new ResponseEntity<>(accao.findById_Produto(id_Produto), HttpStatus.OK);
+            return new ResponseEntity<>(accao.findById_Produto(obj), HttpStatus.OK);
         }
     }
 
@@ -64,7 +64,7 @@ public class ProdutoService {
             mensagem.setMensagem("aumenta estoque");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         }
-        else if(obj.getPreco_custoFinal()<0.0){
+        else if(obj.getPreco_custoFinal()>=1.0){
         mensagem.setMensagem("E necessario informar o preco real");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         }else if(obj.getVolumeEmbalagemDoProduto()<0){
@@ -76,6 +76,7 @@ public class ProdutoService {
         }
     }
 
+    //delete servico
     public ResponseEntity<?> remover(int id_Produto)
     {
         if(accao.countBycodigo(id_Produto)==0){

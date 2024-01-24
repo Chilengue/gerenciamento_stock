@@ -27,9 +27,7 @@ public class Produto_fornecedor {
 
     private Date prazo;
 
-    // @OneToMany
-    // @JoinColumn(name = "codigo_produto", referencedColumnName = "Id_Produto")
-    // private Produto produto;
+    
 
     
 }

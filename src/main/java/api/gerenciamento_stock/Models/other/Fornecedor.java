@@ -5,8 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+// import jakarta.persistence.JoinColumn;
+// import jakarta.persistence.OneToMany;
+// import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -14,7 +16,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "forncedor")
+@Table(name = "fornecedor")
 @Getter
 @Setter
 public  class Fornecedor {
@@ -33,10 +35,14 @@ public  class Fornecedor {
     private String Email;
 
     @OneToOne
-    @JoinColumn(name="codigo_fornecedor", referencedColumnName = "codigoProduto")
-    private Produto_fornecedor produtosFornecer;
+    @JoinColumn(name = "codigo_ProdutoFor", referencedColumnName = "codigoProduto")
+    private Produto_fornecedor produto;
 
-    @OneToMany
-    @JoinColumn(name = "", referencedColumnName = "")
-    private EnderecoFornecedor enderecoFornecedor;
+    // @OneToOne
+    // @JoinColumn(name="codigo_fornecedor", referencedColumnName = "codigoProduto")
+    // private Produto_fornecedor produtosFornecer;
+
+    // @OneToMany
+    // @JoinColumn(name = "", referencedColumnName = "")
+    // private EnderecoFornecedor enderecoFornecedor;
 }

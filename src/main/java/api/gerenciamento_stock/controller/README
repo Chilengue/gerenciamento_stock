@@ -1,0 +1,55 @@
+// package api.gerenciamento_stock.controller;
+
+// import java.util.List;
+
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.http.ResponseEntity;
+// import org.springframework.web.bind.annotation.DeleteMapping;
+// import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.PathVariable;
+// import org.springframework.web.bind.annotation.PutMapping;
+// import org.springframework.web.bind.annotation.RequestBody;
+// import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RestController;
+// import api.gerenciamento_stock.Models.other.Produto;
+// import api.gerenciamento_stock.Repository.ProdutoReposotory;
+// import api.gerenciamento_stock.Service.ProdutoService;
+
+// @RestController
+// @RequestMapping("/produtos")
+// public class ProdutoController {
+    
+//     @Autowired
+//     private ProdutoReposotory produtoReposotory;
+
+//     @Autowired
+//     private ProdutoService ProdutoService;
+
+//     @GetMapping("/cadastrar")
+//     public ResponseEntity<?> cadastrar(@RequestBody Produto obj)
+//     {
+//         return ProdutoService.cadastrar(obj);
+//     }
+
+//     @GetMapping("/list")
+//     public List<Produto> select(){
+//         return produtoReposotory.findAll();
+//     }
+    
+//     @GetMapping("/{codigo}")
+//     public ResponseEntity<?> selectProduct(@RequestBody Produto codigo)
+//     {
+//         return ProdutoService.selecionarpeloId(codigo);
+//     }
+
+//     @PutMapping("/codigo")
+//     public ResponseEntity<?> edit(@RequestBody Produto obj){
+//         return ProdutoService.editar(obj);
+//     }
+
+//     @DeleteMapping("/produto")
+//     public ResponseEntity<?> remove (@PathVariable int codigo)
+//     {
+//         return ProdutoService.remove(codigo);
+//     }
+// }

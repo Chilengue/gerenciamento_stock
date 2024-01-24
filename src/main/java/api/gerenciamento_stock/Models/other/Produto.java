@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Produto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private int Id_Produto;
 
     private String modelo;
@@ -25,6 +25,9 @@ public class Produto {
     private float preco_custoFinal;
 
     private float volumeEmbalagemDoProduto;
+
+    // @OneToOne
+    // @PrimaryKeyJoinColumn
 
     
 }

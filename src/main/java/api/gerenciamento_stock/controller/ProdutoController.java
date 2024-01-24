@@ -1,29 +1,33 @@
-package api.gerenciamento_stock.controller;
+
+ package api.gerenciamento_stock.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import api.gerenciamento_stock.Models.other.Produto;
 import api.gerenciamento_stock.Repository.ProdutoReposotory;
-import api.gerenciamento_stock.Service.ProdutoService;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/produto")
 public class ProdutoController {
-    
-    @Autowired
-    private ProdutoReposotory produtoReposotory;
 
     @Autowired
-    private ProdutoService ProdutoService;
+    private ProdutoReposotory produtosAcao;
 
-    @GetMapping("/cadastrar")
-    public ResponseEntity<?> cadastrar(@RequestBody Produto obj)
+    @GetMapping("/listar")
+    public Iterable<Produto> listar()
     {
-        return ProdutoService.cadastrar(obj);
+        return produtosAcao.findAll();
     }
+
+    @PostMapping("/cadastrar")
+    public Produto cadastrar(@RequestBody Produto obj){
+     return produtosAcao.save(obj);   
+    }
+
     
 }
